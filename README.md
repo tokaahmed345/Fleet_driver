@@ -198,14 +198,18 @@ flutter run
 ## 📱 Screenshots
 
 <p align="center">
-  <img src="screenshots/1.png" width="200"/>
-  <img src="screenshots/2.png" width="200"/>
-  <img src="screenshots/3.png" width="200"/>
+  <img src="screenshots/photo.jpeg" width="200"/>
+  <img src="screenshots/photo2.jpeg" width="200"/>
+  <img src="screenshots/photo3.jpeg" width="200"/>
+    <img src="screenshots/photo4.jpeg" width="200"/>
+
 </p>
 <p align="center">
-  <img src="screenshots/4.png" width="200"/>
-  <img src="screenshots/5.png" width="200"/>
-  <img src="screenshots/6.png" width="200"/>
+  <img src="screenshots/photo5.jpeg" width="200"/>
+  <img src="screenshots/photo6.jpeg" width="200"/>
+    <img src="screenshots/photo7.jpeg" width="200"/>
+ <img src="screenshots/photo8.jpeg" width="200"/>
+
 </p>
 
 > 📌 Place your 6 screenshots inside a `screenshots/` folder in the repo root, named `1.png` through `6.png` (or update the paths above to match your file names).
