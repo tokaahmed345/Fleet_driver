@@ -164,11 +164,11 @@ class _LogFreeSeatsModalState extends State<LogFreeSeatsModal> {
     if (isChecking) {
       return const Row(
         children: [
-          SizedBox(
-            width: 16,
-            height: 16,
-            child: CircularProgressIndicator(strokeWidth: 2),
-          ),
+          // SizedBox(
+          //   width: 16,
+          //   height: 16,
+          //   child: CircularProgressIndicator(strokeWidth: 2),
+          // ),
           SizedBox(width: 8),
           Text('Getting your location...')
         ],

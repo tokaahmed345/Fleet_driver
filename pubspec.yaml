@@ -33,6 +33,8 @@ dependencies:
   dartz: ^0.10.1
   dio: ^5.10.0
   equatable: ^2.0.8
+  flutter_launcher_icons: ^0.13.1
+
   flutter:
     sdk: flutter
   flutter_bloc: ^9.1.1
@@ -90,3 +92,8 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/to/font-from-package
+flutter_icons:
+  android: true
+  ios: true
+  image_path: "assets/images/app_icon.png"
+  remove_alpha_ios: true

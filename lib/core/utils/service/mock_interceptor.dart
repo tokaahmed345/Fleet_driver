@@ -173,7 +173,7 @@ class MockInterceptor extends Interceptor {
       );
     }
 
-    // ---------------- GET LOGS (optional - عشان تتأكدي من الداتا وقت التست) ----------------
+    // ---------------- GET LOGS (optional ) ----------------
     if (options.path == EndPoints.logs && options.method == 'GET') {
       return handler.resolve(
         Response(

@@ -4,11 +4,11 @@ class LocationService {
 
 Future<Position?> getCurrentLocation() async {
   bool serviceEnabled = await Geolocator.isLocationServiceEnabled();
-  print('🛰️ serviceEnabled: $serviceEnabled');
+  // print('🛰️ serviceEnabled: $serviceEnabled');
   if (!serviceEnabled) return null;
 
   LocationPermission permission = await Geolocator.checkPermission();
-  print('🔑 permission: $permission');
+  // print('🔑 permission: $permission');
   if (permission == LocationPermission.denied) {
     permission = await Geolocator.requestPermission();
     if (permission == LocationPermission.denied) return null;
@@ -21,13 +21,13 @@ Future<Position?> getCurrentLocation() async {
       desiredAccuracy: LocationAccuracy.medium, 
       timeLimit: const Duration(seconds: 20),   
     );
-    print('📍 Position: ${position.latitude}, ${position.longitude} | mocked: ${position.isMocked}');
+    // print('📍 Position: ${position.latitude}, ${position.longitude} | mocked: ${position.isMocked}');
     return position;
   } catch (e) {
-    print('❌ getCurrentLocation error: $e');
+    // print('❌ getCurrentLocation error: $e');
     try {
       final last = await Geolocator.getLastKnownPosition();
-      print('↩️ fallback lastKnownPosition: ${last?.latitude}, ${last?.longitude}');
+      // print('↩️ fallback lastKnownPosition: ${last?.latitude}, ${last?.longitude}');
       return last;
     } catch (_) {
       return null;
