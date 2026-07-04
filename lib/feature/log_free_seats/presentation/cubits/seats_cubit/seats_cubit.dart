@@ -41,12 +41,6 @@ static const double geofenceRadiusMeters = AppConstants.geofenceRadiusMeters;
       lat2: stationLat,
       lng2: stationLng,
     );
-  //     print('📍 My location: ${position.latitude}, ${position.longitude}');
-  // print('🚏 Station location: $stationLat, $stationLng');
-  // print('📏 Distance: $distance meters');
-  // print('🎯 Radius allowed: $geofenceRadiusMeters meters');
-  // print('✅ isMocked: ${position.isMocked}');
-  // print('${distance <= geofenceRadiusMeters ? "✅ Within range" : "❌ Out of range"} — diff: ${(distance - geofenceRadiusMeters).toStringAsFixed(1)}m');
 
 
     if (isClosed) return false;
