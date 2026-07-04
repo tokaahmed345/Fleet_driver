@@ -62,7 +62,7 @@ class ServerFailure extends ServerFail {
     }
 
       return ServerFailure(
-        errMessage: message ?? 'حدث خطأ غير معروف من السيرفر.',
+        errMessage: message ?? 'Unknown Server error ',
       );
     } else if (statusCode == 500) {
       return ServerFailure(

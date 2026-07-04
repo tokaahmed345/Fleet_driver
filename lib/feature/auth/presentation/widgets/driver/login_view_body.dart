@@ -1,8 +1,6 @@
 import 'package:fleet_driver/core/utils/colors/app_colors.dart';
 import 'package:fleet_driver/core/utils/function/validators.dart';
 import 'package:fleet_driver/core/utils/router/routes_name.dart';
-import 'package:fleet_driver/core/utils/service_locator/service_locator.dart';
-import 'package:fleet_driver/core/utils/sharedprefrence.dart';
 import 'package:fleet_driver/core/utils/styles/app_style.dart';
 import 'package:fleet_driver/core/utils/widgets/app_text_form_field.dart';
 import 'package:fleet_driver/core/utils/widgets/primary_button.dart';
@@ -24,7 +22,6 @@ class _LoginViewBodyState extends State<LoginViewBody> {
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
-
 
   @override
   void dispose() {
@@ -89,40 +86,39 @@ class _LoginViewBodyState extends State<LoginViewBody> {
                   SizedBox(
                     width: double.infinity,
                     height: 58,
-                    child: 
-                      BlocConsumer<LogInCubit, LogInState>(
-                            listener: (context, state) {
-                                  if (state is LogInFailure) {
-                      showSnackBarFuction(context, state.errorMessage, isError: true);
-                    }
-     if (state is LogInSuccess) {
-    final entity = state.logInEntity;
+                    child: BlocConsumer<LogInCubit, LogInState>(
+                      listener: (context, state) {
+                        if (state is LogInFailure) {
+                          showSnackBarFuction(
+                            context,
+                            state.errorMessage,
+                            isError: true,
+                          );
+                        }
+                        if (state is LogInSuccess) {
+                          final entity = state.logInEntity;
 
-   
+                          if (entity.role == 'admin') {
+                            GoRouter.of(context).go(RoutesName.registerDriver);
+                          } else {
+                            GoRouter.of(context).go(RoutesName.home);
+                          }
+                        }
+                      },
 
-    if (entity.role == 'admin') {
-      GoRouter.of(context).go(RoutesName.registerDriver);
-    } else {
-      GoRouter.of(context).go(RoutesName.home);
-    }
-  }
-},
-                            
-
-                            builder: (context, state) {
-                              return state is LogInLoading
-    ? Center(
-        
-        child:  CircularProgressIndicator(
-          color: AppColors.primary,
-        ),
-      ):
-                              PrimaryButton(
+                      builder: (context, state) {
+                        return state is LogInLoading
+                            ? Center(
+                                child: CircularProgressIndicator(
+                                  color: AppColors.primary,
+                                ),
+                              )
+                            : PrimaryButton(
                                 label: 'Login',
                                 onTap: _handleLogin,
                               );
-                            },
-                          ),
+                      },
+                    ),
                   ),
                   const SizedBox(height: 22),
                   Text(
