@@ -28,7 +28,7 @@ The app was designed with a strong focus on **driver safety and usability** — 
 
 ---
 
-## ✨ Key Features
+## ✨  Key Features
 
 ### 🔐 Authentication
 - Driver login screen with credential-based authentication.
