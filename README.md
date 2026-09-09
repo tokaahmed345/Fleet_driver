@@ -1,4 +1,4 @@
-<h1 align="center">🚌 Fleet Driver</h1>
+<h1 align="center"> 🚌 Fleet Driver</h1>
 <p align="center">
   <b>Transit Driver Mobile Application — Built with Flutter</b><br/>
   A driver-centric, offline-first app for real-time route navigation, live updates, and passenger (free seats) logging.
